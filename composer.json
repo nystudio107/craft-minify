@@ -36,7 +36,7 @@
         "developerUrl": "https://nystudio107.com",
         "description": "A simple plugin that allows you to minify blocks of HTML, CSS, and JS inline in Craft CMS templates.",
         "documentationUrl": "https://github.com/nystudio107/craft3-minify/blob/master/README.md",
-        "releaseFeedUrl": "https://raw.githubusercontent.com/nystudio107/craft3-minify/CHANGELOG.md",
+        "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft3-minify/CHANGELOG.md",
         "class": "nystudio107\\minify\\Minify",
         "components": {
             "minify": "nystudio107\\minify\\services\\MinifyService"
