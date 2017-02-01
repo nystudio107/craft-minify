@@ -1,0 +1,8 @@
+
+# /
+/test
+/.idea/
+/composer.lock
+.DS_Store
+/vendor
+/.php_cs.cache
