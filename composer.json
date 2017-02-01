@@ -1,5 +1,5 @@
 {
-    "name": "nystudio107/minify",
+    "name": "nystudio107/craft3-minify",
     "description": "A simple plugin that allows you to minify blocks of HTML, CSS, and JS inline in Craft CMS templates.",
     "type": "craft-plugin",
     "version": "1.2.0",
@@ -18,8 +18,7 @@
         }
     ],
     "require": {
-        "mrclay/minify": "^2.3.0",
-        "composer/installers": "~1.0"
+        "mrclay/minify": "^2.3.0"
     },
     "autoload": {
         "psr-4": {
@@ -36,8 +35,8 @@
         "developer": "nystudio107",
         "developerUrl": "https://nystudio107.com",
         "description": "A simple plugin that allows you to minify blocks of HTML, CSS, and JS inline in Craft CMS templates.",
-        "documentationUrl": "https://github.com/nystudio107/minify/blob/craft3/README.md",
-        "releaseFeedUrl": "https://raw.githubusercontent.com/nystudio107/minify/craft3/releases.json",
+        "documentationUrl": "https://github.com/nystudio107/craft3-minify/blob/master/README.md",
+        "releaseFeedUrl": "https://raw.githubusercontent.com/nystudio107/craft3-minify/CHANGELOG.md",
         "class": "nystudio107\\minify\\Minify",
         "components": {
             "minify": "nystudio107\\minify\\services\\MinifyService"
