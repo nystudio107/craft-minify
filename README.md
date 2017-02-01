@@ -4,11 +4,8 @@ A simple plugin that allows you to minify blocks of HTML, CSS, and JS inline in 
 
 **Installation**
 
-1. Download & unzip the file and place the `minify` directory into your `craft/plugins` directory
-2.  -OR- do a `git clone https://github.com/khalwat/craft3-minify.git` directly into your `craft/plugins` folder.  You can then update it with `git pull`
-3.  -OR- install with Composer via `composer require nystudio107/craft3-minify`
-4. Install plugin in the Craft Control Panel under Settings > Plugins
-5. The plugin folder should be named `minify` for Craft to see it, so you may have to rename it to remove the `craft3-` prefix.  GitHub also recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.
+1. Install with Composer via `composer require nystudio107/craft3-minify` from your project directory
+2. Install plugin in the Craft Control Panel under Settings > Plugins
 
 ## Configuring Minify
 
