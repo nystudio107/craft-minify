@@ -2,6 +2,8 @@
 
 A simple plugin that allows you to minify blocks of HTML, CSS, and JS inline in Craft CMS templates
 
+Related: [Minify for Craft 2.x](https://github.com/nystudio107/minify)
+
 **Installation**
 
 1. Install with Composer via `composer require nystudio107/craft3-minify` from your project directory
