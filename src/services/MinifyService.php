@@ -24,6 +24,9 @@ class MinifyService extends Component
 
     private $shouldMinify = true;
 
+    /**
+     * @inheritdoc
+     */
     public function init()
     {
         $disableTemplateMinifying = Craft::$app->config->get('disableTemplateMinifying', 'minify');
@@ -38,60 +41,71 @@ class MinifyService extends Component
         }
     }
 
-/* --------------------------------------------------------------------------------
-    Minify all the things
--------------------------------------------------------------------------------- */
-
-    public function minify($htmlText="")
+    /**
+     * Minify all the things
+     *
+     * @param string $htmlText
+     *
+     * @return string
+     */
+    public function minify($htmlText = "")
     {
-        if ($this->shouldMinify)
-        {
-            $options = array(
+        if ($this->shouldMinify) {
+            $options = [
                 'cssMinifier' => '\Minify_CSSmin::minify',
                 'jsMinifier' => '\JSMin::minify',
-                );
+            ];
             $htmlText = \Minify_HTML::minify($htmlText, $options);
         }
+
         return $htmlText;
-    } /* -- minify */
+    }
 
-/* --------------------------------------------------------------------------------
-    Minify the passed in HTML
--------------------------------------------------------------------------------- */
-
-    public function htmlMin($htmlText="")
+    /**
+     * Minify the passed in HTML
+     *
+     * @param string $htmlText
+     *
+     * @return string
+     */
+    public function htmlMin($htmlText = "")
     {
-        if ($this->shouldMinify)
-        {
+        if ($this->shouldMinify) {
             $htmlText = \Minify_HTML::minify($htmlText);
         }
+
         return $htmlText;
-    } /* -- htmlMin */
+    }
 
-/* --------------------------------------------------------------------------------
-    Minify the passed in CSS
--------------------------------------------------------------------------------- */
-
-    public function cssMin($cssText="")
+    /**
+     * Minify the passed in CSS
+     *
+     * @param string $cssText
+     *
+     * @return string
+     */
+    public function cssMin($cssText = "")
     {
-        if ($this->shouldMinify)
-        {
+        if ($this->shouldMinify) {
             $cssText = \Minify_CSSmin::minify($cssText);
         }
+
         return $cssText;
-    } /* -- cssMin */
+    }
 
-/* --------------------------------------------------------------------------------
-    Minify the passed in JS
--------------------------------------------------------------------------------- */
-
-    public function jsMin($jsText="")
+    /**
+     * Minify the passed in JS
+     *
+     * @param string $jsText
+     *
+     * @return string
+     */
+    public function jsMin($jsText = "")
     {
-        if ($this->shouldMinify)
-        {
+        if ($this->shouldMinify) {
             $jsText = \JSMin::minify($jsText);
         }
-        return $jsText;
-    } /* -- jsMin */
 
-} /* -- MinifyService */
+        return $jsText;
+    }
+}

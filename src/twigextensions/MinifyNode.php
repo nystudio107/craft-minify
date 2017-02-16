@@ -18,19 +18,14 @@ use nystudio107\minify\Minify;
  * @package   Minify
  * @since     1.2.0
  */
-class Minify_Node extends \Twig_Node
+class MinifyNode extends \Twig_Node
 {
-    // Properties
-    // =========================================================================
-
 
     // Public Methods
     // =========================================================================
 
     /**
      * @param \Twig_Compiler $compiler
-     *
-     * @return null
      */
     public function compile(\Twig_Compiler $compiler)
     {
@@ -46,26 +41,18 @@ class Minify_Node extends \Twig_Node
             ->subcompile($this->getNode('body'))
             ->write("\$_compiledBody = ob_get_clean();\n");
 
-        if ($html)
-        {
+        if ($html) {
             $compiler
-                ->write("echo " . Minify::className() . "::\$plugin->minify->htmlMin(\$_compiledBody);\n");
-        }
-        elseif ($css)
-        {
+                ->write("echo ".Minify::className()."::\$plugin->minify->htmlMin(\$_compiledBody);\n");
+        } elseif ($css) {
             $compiler
-                ->write("echo " . Minify::className() . "::\$plugin->minify->cssMin(\$_compiledBody);\n");
-        }
-        elseif ($js)
-        {
+                ->write("echo ".Minify::className()."::\$plugin->minify->cssMin(\$_compiledBody);\n");
+        } elseif ($js) {
             $compiler
-                ->write("echo " . Minify::className() . "::\$plugin->minify->jsMin(\$_compiledBody);\n");
-        }
-        else
-        {
+                ->write("echo ".Minify::className()."::\$plugin->minify->jsMin(\$_compiledBody);\n");
+        } else {
             $compiler
-                ->write("echo " . Minify::className() . "::\$plugin->minify->minify(\$_compiledBody);\n");
+                ->write("echo ".Minify::className()."::\$plugin->minify->minify(\$_compiledBody);\n");
         }
-
     }
 }

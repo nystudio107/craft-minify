@@ -9,7 +9,7 @@
 
 namespace nystudio107\minify\twigextensions;
 
-use nystudio107\minify\twigextensions\Minify_TokenParser;
+use nystudio107\minify\twigextensions\MinifyTokenParser;
 
 /**
  * Minify twig extension
@@ -36,12 +36,13 @@ class MinifyTwigExtension extends \Twig_Extension
     /**
      * Returns the token parser instances to add to the existing list.
      *
-     * @return array An array of Twig_TokenParserInterface or Twig_TokenParserBrokerInterface instances
+     * @return array An array of Twig_TokenParserInterface or
+     * Twig_TokenParserBrokerInterface instances
      */
     public function getTokenParsers()
     {
-        return array(
-            new Minify_TokenParser(),
-        );
+        return [
+            new MinifyTokenParser(),
+        ];
     }
 }
