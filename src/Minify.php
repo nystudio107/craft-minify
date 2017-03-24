@@ -11,6 +11,7 @@ namespace nystudio107\minify;
 
 use nystudio107\minify\services\MinifyService;
 use nystudio107\minify\twigextensions\MinifyTwigExtension;
+use nystudio107\minify\models\Settings;
 
 use Craft;
 use craft\base\Plugin;
@@ -55,4 +56,16 @@ class Minify extends Plugin
     {
         return Craft::t('minify', 'Minify');
     }
+
+    // Protected Methods
+    // =========================================================================
+
+    /**
+     * @return Settings
+     */
+    protected function createSettingsModel()
+    {
+        return new Settings();
+    }
+
 }

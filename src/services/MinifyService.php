@@ -9,6 +9,9 @@
 
 namespace nystudio107\minify\services;
 
+use nystudio107\minify\Minify;
+use nystudio107\minify\models\Settings;
+
 use Craft;
 use craft\base\Component;
 
@@ -29,14 +32,12 @@ class MinifyService extends Component
      */
     public function init()
     {
-        $disableTemplateMinifying = Craft::$app->config->get('disableTemplateMinifying', 'minify');
-        $disableDevmodeMinifying = Craft::$app->config->get('disableDevmodeMinifying', 'minify');
-
-        if ($disableTemplateMinifying) {
+        if (Minify::$plugin->getSettings()->disableTemplateMinifying) {
             $this->shouldMinify = false;
         }
 
-        if (Craft::$app->config->get('devMode') && $disableDevmodeMinifying) {
+        if (Craft::$app->getConfig()->getGeneral()->devMode
+            && Minify::$plugin->getSettings()->disableDevModeMinifying) {
             $this->shouldMinify = false;
         }
     }
