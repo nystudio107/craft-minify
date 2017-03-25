@@ -44,6 +44,15 @@ class Minify extends Plugin
 
         // Add in our Twig extensions
         Craft::$app->view->twig->addExtension(new MinifyTwigExtension());
+
+        Craft::info(
+            Craft::t(
+                'minify',
+                '{name} plugin loaded',
+                ['name' => $this->name]
+            ),
+            __METHOD__
+        );
     }
 
     /**
