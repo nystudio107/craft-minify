@@ -54,7 +54,7 @@ class MinifyService extends Component
         if ($this->shouldMinify) {
             $options = [
                 'cssMinifier' => '\Minify_CSSmin::minify',
-                'jsMinifier' => '\Minify\\JS\\JShrink::minify',
+                'jsMinifier' => '\JSMin\JSMin::minify',
             ];
             $htmlText = \Minify_HTML::minify($htmlText, $options);
         }
@@ -104,7 +104,7 @@ class MinifyService extends Component
     public function jsMin($jsText = "")
     {
         if ($this->shouldMinify) {
-            $jsText = \Minify\JS\JShrink::minify($jsText);
+            $jsText = \JSMin\JSMin::minify($jsText);
         }
 
         return $jsText;

@@ -23,9 +23,14 @@
     ],
     "require": {
         "craftcms/cms": "~3.0.0-beta.1",
-        "mrclay/minify": "^3.0.0",
-        "tedivm/jshrink": "~1.1.0"
+        "mrclay/minify": "^3.0.0"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
     "autoload": {
         "psr-4": {
           "nystudio107\\minify\\": "src/"

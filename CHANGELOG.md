@@ -3,7 +3,6 @@
 ## 1.2.5 - 2017.04.11
 ### Changed
 * Updated minify deps to `3.0.0` for PHP 7.1 compatibility
-* Refactored the code to use `JSShrink` instead of `JSMin`
 
 ## 1.2.4 - 2017.03.24
 ### Changed
