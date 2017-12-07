@@ -8,7 +8,7 @@ Related: [Minify for Craft 2.x](https://github.com/nystudio107/minify)
 
 This plugin requires Craft CMS 3.0.0-RC1 or later.
 
-**Installation**
+## Installation
 
 1. Install with Composer via `composer require nystudio107/craft3-minify` from your project directory
 2. Install plugin in the Craft Control Panel under Settings > Plugins
