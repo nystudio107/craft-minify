@@ -4,6 +4,10 @@ A simple plugin that allows you to minify blocks of HTML, CSS, and JS inline in 
 
 Related: [Minify for Craft 2.x](https://github.com/nystudio107/minify)
 
+## Requirements
+
+This plugin requires Craft CMS 3.0.0-RC1 or later.
+
 **Installation**
 
 1. Install with Composer via `composer require nystudio107/craft3-minify` from your project directory
@@ -84,9 +88,9 @@ You can wrap any arbitrary `<script>` JS code in the following block tags to min
 
 If you want to minify your entire HTML on the frontend, you can simply wrap your entire `_layout.twig` template (the one that other templates `extends`):
 
-    {% minify %}
+    {%- minify -%}
         (Entire base HTML/Twig template here)
-    {% endminify %}
+    {%- endminify -%}
 
 However, understand the potential performance implications.  On large HTML/CSS/JS blocks minification is not cheap, and if you do it this way, every single HTTP request will spend extra cycles minimizing your entire template.
 
@@ -94,15 +98,17 @@ It works fine for HTML/CSS/JS templates that aren't too huge, but measure any pe
 
 On most sites, the overhead that spinning up PHP and Craft takes is the majority of the TTFB (Time To First Byte), and this is not adversely affected by minifying the entire HTML as described here.
 
+The `{%- -%}` syntax is just [Twig's whitespace control](https://twig.symfony.com/doc/2.x/templates.html#templates-whitespace-control).
+
 ## Cache as cache can
 
 A great way to use the `{%- minify -%}` tags is to wrap them in `{% cache %}` tags:
 
-    {% cache %}
+    {%- cache -%}
         {%- minify -%}
             (HTML/Twig code here)
         {%- endminify -%}
-    {% endcache %}
+    {%- endcache -%}
 
 As with `{% cache %}` tags, you can’t use `{%- minify -%}` tags outside of top-level `{% block %}` tags within a template that extends another.  [Read more about cache tags](http://buildwithcraft.com/docs/templating/cache)
 
