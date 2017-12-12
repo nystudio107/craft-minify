@@ -1,5 +1,10 @@
 # Minify Changelog
 
+## 1.2.6 - 2017.12.06
+### Changed
+* Updated to require craftcms/cms `^3.0.0-RC1`
+* Switched to `Craft::$app->view->registerTwigExtension` to register the Twig extension
+
 ## 1.2.5 - 2017.04.11
 ### Changed
 * Updated minify deps to `3.0.0` for PHP 7.1 compatibility
