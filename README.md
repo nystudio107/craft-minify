@@ -2,6 +2,8 @@
 
 A simple plugin that allows you to minify blocks of HTML, CSS, and JS inline in Craft CMS templates
 
+![Screenshot](resources/img/plugin-logo.png)
+
 Related: [Minify for Craft 2.x](https://github.com/nystudio107/minify)
 
 ## Requirements
