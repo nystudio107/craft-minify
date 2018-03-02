@@ -1,5 +1,9 @@
 # Minify Changelog
 
+## 1.2.8 - 2018.03.02
+### Changed
+* Fixed deprecation errors from Craft CMS 3 RC13
+
 ## 1.2.7 - 2018.02.01
 ### Added
 * Renamed the composer package name to `craft-minify`

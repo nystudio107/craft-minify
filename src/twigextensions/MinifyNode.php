@@ -43,16 +43,16 @@ class MinifyNode extends \Twig_Node
 
         if ($html) {
             $compiler
-                ->write("echo ".Minify::className()."::\$plugin->minify->htmlMin(\$_compiledBody);\n");
+                ->write("echo ".Minify::class."::\$plugin->minify->htmlMin(\$_compiledBody);\n");
         } elseif ($css) {
             $compiler
-                ->write("echo ".Minify::className()."::\$plugin->minify->cssMin(\$_compiledBody);\n");
+                ->write("echo ".Minify::class."::\$plugin->minify->cssMin(\$_compiledBody);\n");
         } elseif ($js) {
             $compiler
-                ->write("echo ".Minify::className()."::\$plugin->minify->jsMin(\$_compiledBody);\n");
+                ->write("echo ".Minify::class."::\$plugin->minify->jsMin(\$_compiledBody);\n");
         } else {
             $compiler
-                ->write("echo ".Minify::className()."::\$plugin->minify->minify(\$_compiledBody);\n");
+                ->write("echo ".Minify::class."::\$plugin->minify->minify(\$_compiledBody);\n");
         }
     }
 }
