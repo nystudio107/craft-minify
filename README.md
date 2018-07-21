@@ -45,22 +45,25 @@ Finally, if you minify any code you wrap in `{% cache %}` tags, that means it wi
 
 You can wrap any arbitrary HTML/Twig code in the following block tags to minify it:
 
-    {% minify %}
-        (HTML/Twig code here)
-    {% endminify %}
+```twig
+{% minify %}
+    (HTML/Twig code here)
+{% endminify %}
+```
 
 ...and the resulting HTML output will be stripped of comments, empty space, etc.
 
 Using the `{% minify %}` on its own with no parameters (see below) will minify HTML, as well as any inline CSS (in `<style>` tag pairs) and any inline Javascript (in `<script>` tag pairs).
 
-
 ### Minifying HTML
 
 You can wrap any arbitrary HTML/Twig code in the following block tags to minify it:
 
-    {% minify html %}
-        (HTML/Twig code here)
-    {% endminify %}
+```twig
+{% minify html %}
+    (HTML/Twig code here)
+{% endminify %}
+```
 
 ...and the resulting HTML output will be stripped of comments, empty space, etc.
 
@@ -70,33 +73,39 @@ It will ignore `<script>` and `<style>` tag pairs in the minification.  You shou
 
 You can wrap any arbitrary `<style>` CSS code in the following block tags to minify it:
 
-    {% minify css %}
-        <style>
-            (Inline CSS styles here)
-        </style>
-    {% endminify %}
+```twig
+{% minify css %}
+    <style>
+        (Inline CSS styles here)
+    </style>
+{% endminify %}
+```
 
 ...and the resulting CSS output will be stripped of comments, empty space, etc.
-    
+
 ### Minifying JS
 
 You can wrap any arbitrary `<script>` JS code in the following block tags to minify it:
 
-    {% minify js %}
-        <script>
-            (Inline JS code here)
-        </script>
-    {% endminify %}
+```twig
+{% minify js %}
+    <script>
+        (Inline JS code here)
+    </script>
+{% endminify %}
+```
 
 ...and the resulting JS output will be stripped of comments, empty space, etc.
-    
+
 ## Minify all the things
 
 If you want to minify your entire HTML on the frontend, you can simply wrap your entire `_layout.twig` template (the one that other templates `extends`):
 
-    {%- minify -%}
-        (Entire base HTML/Twig template here)
-    {%- endminify -%}
+```twig
+{%- minify -%}
+    (Entire base HTML/Twig template here)
+{%- endminify -%}
+```
 
 However, understand the potential performance implications.  On large HTML/CSS/JS blocks minification is not cheap, and if you do it this way, every single HTTP request will spend extra cycles minimizing your entire template.
 
@@ -110,13 +119,15 @@ The `{%- -%}` syntax is just [Twig's whitespace control](https://twig.symfony.co
 
 A great way to use the `{%- minify -%}` tags is to wrap them in `{% cache %}` tags:
 
-    {%- cache -%}
-        {%- minify -%}
-            (HTML/Twig code here)
-        {%- endminify -%}
-    {%- endcache -%}
+```twig
+{%- cache -%}
+    {%- minify -%}
+        (HTML/Twig code here)
+    {%- endminify -%}
+{%- endcache -%}
+```
 
-As with `{% cache %}` tags, you can’t use `{%- minify -%}` tags outside of top-level `{% block %}` tags within a template that extends another.  [Read more about cache tags](http://buildwithcraft.com/docs/templating/cache)
+As with `{% cache %}` tags, you can’t use `{%- minify -%}` tags outside of top-level `{% block %}` tags within a template that extends another.  [Read more about cache tags](https://docs.craftcms.com/v3/dev/tags/cache.html)
 
 A nice side-benefit of minifying HTML inside of `{% cache %}` tags is that the text that is stored in the database as a cache is minified itself.
 
@@ -138,13 +149,14 @@ Don't change this file directly, instead duplicate it, rename it to `minify.php`
 
 Minify uses the [Minify PHP library](https://github.com/mrclay/minify).  Here's their official explanation:
 
-####Why do the CSS & HTML minifiers add so many line breaks?
+#### Why do the CSS & HTML minifiers add so many line breaks?
+
 TL;DR: Ignore them. They don't add to the output size and if you absolutely want all content on one line you will have to use another tool.
 
 It's rumored that some source control tools and old browsers don't like very long lines. Compressed files with shorter lines are also easier to diff.
 
-Since both Minify classes are regex-based, it would be very difficult/error-prone to count characters then try to re-establish context to add line breaks. Instead, both classes trade 1 space for 1 line break (\n) wherever possible, adding breaks but without adding bytes.
+Since both Minify classes are regex-based, it would be very difficult/error-prone to count characters then try to re-establish context to add line breaks. Instead, both classes trade 1 space for 1 line break (`\n`) wherever possible, adding breaks but without adding bytes.
 
 If you can think of another safe & efficient way to limit lines in these two tools without adding bytes, please submit a patch, but this is not something anyone should be worrying about.
 
-Brought to you by [nystudio107](http://nystudio107.com)
+Brought to you by [nystudio107](https://nystudio107.com/)
