@@ -1,5 +1,9 @@
 # Minify Changelog
 
+## 1.2.9 - 2018.07.21
+### Changed
+* We now default `disableDevModeMinifying` to `true` (which is probably what most people want in `devMode`)
+
 ## 1.2.8 - 2018.03.02
 ### Changed
 * Fixed deprecation errors from Craft CMS 3 RC13

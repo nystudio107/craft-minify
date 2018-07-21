@@ -38,7 +38,7 @@ class Settings extends Model
      *
      * @var bool
      */
-    public $disableDevModeMinifying = false;
+    public $disableDevModeMinifying = true;
 
 
     // Public Methods
@@ -53,7 +53,7 @@ class Settings extends Model
             ['disableTemplateMinifying', 'boolean'],
             ['disableTemplateMinifying', 'default', 'value' => false],
             ['disableDevModeMinifying', 'boolean'],
-            ['disableDevModeMinifying', 'default', 'value' => false],
+            ['disableDevModeMinifying', 'default', 'value' => true],
         ];
     }
 }
