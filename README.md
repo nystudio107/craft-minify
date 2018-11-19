@@ -17,7 +17,7 @@ This plugin requires Craft CMS 3.0.0-RC1 or later.
 1. Install with Composer via `composer require nystudio107/craft-minify` from your project directory
 2. Install plugin in the Craft Control Panel under Settings > Plugins
 
-You can also install Minify via the **Plugin Store** in the Craft AdminCP.
+You can also install Minify via the **Plugin Store** in the Craft Control Panel.
 
 ## Configuring Minify
 
