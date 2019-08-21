@@ -11,8 +11,8 @@
         "minify"
     ],
     "support": {
-        "docs": "https://github.com/nystudio107/craft-minify/blob/v1/README.md",
-        "issues": "https://github.com/nystudio107/craft-minify/issues"
+        "docs": "https://nystudio107.com/plugins/minify/documentation",
+        "issues": "https://nystudio107.com/plugins/minify/support"
     },
     "license": "MIT",
     "authors": [
