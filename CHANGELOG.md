@@ -1,5 +1,9 @@
 # Minify Changelog
 
+## 1.2.10 - 2020.04.02
+### Changed
+* Exclude Nginx/Apache Server Side Include (SSI) comments from being stripped via `mrclay/minify` PR
+
 ## 1.2.9 - 2018.07.21
 ### Changed
 * We now default `disableDevModeMinifying` to `true` (which is probably what most people want in `devMode`)
