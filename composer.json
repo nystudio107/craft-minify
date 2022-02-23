@@ -25,12 +25,6 @@
     "craftcms/cms": "^3.0.0",
     "mrclay/minify": "^3.0.10"
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
-    }
-  ],
   "autoload": {
     "psr-4": {
       "nystudio107\\minify\\": "src/"
