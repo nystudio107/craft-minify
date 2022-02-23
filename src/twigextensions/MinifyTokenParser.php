@@ -9,7 +9,9 @@
 
 namespace nystudio107\minify\twigextensions;
 
-use nystudio107\minify\twigextensions\MinifyNode;
+use Twig\Error\SyntaxError;
+use Twig\Token;
+use Twig\TokenParser\AbstractTokenParser;
 
 /**
  * Minify twig token parser
@@ -18,7 +20,7 @@ use nystudio107\minify\twigextensions\MinifyNode;
  * @package   Minify
  * @since     1.2.0
  */
-class MinifyTokenParser extends \Twig_TokenParser
+class MinifyTokenParser extends AbstractTokenParser
 {
     // Public Methods
     // =========================================================================
@@ -26,11 +28,12 @@ class MinifyTokenParser extends \Twig_TokenParser
     /**
      * Parses {% minify %}...{% endminify %} tags
      *
-     * @param \Twig_Token $token
+     * @param Token $token
      *
-     * @return \nystudio107\minify\twigextensions\MinifyNode
+     * @return MinifyNode
+     * @throws SyntaxError
      */
-    public function parse(\Twig_Token $token)
+    public function parse(Token $token): MinifyNode
     {
         $lineNo = $token->getLine();
         $stream = $this->parser->getStream();
@@ -41,24 +44,24 @@ class MinifyTokenParser extends \Twig_TokenParser
             'js' => false,
         ];
 
-        if ($stream->test(\Twig_Token::NAME_TYPE, 'html')) {
+        if ($stream->test(Token::NAME_TYPE, 'html')) {
             $attributes['html'] = true;
             $stream->next();
         }
 
-        if ($stream->test(\Twig_Token::NAME_TYPE, 'css')) {
+        if ($stream->test(Token::NAME_TYPE, 'css')) {
             $attributes['css'] = true;
             $stream->next();
         }
 
-        if ($stream->test(\Twig_Token::NAME_TYPE, 'js')) {
+        if ($stream->test(Token::NAME_TYPE, 'js')) {
             $attributes['js'] = true;
             $stream->next();
         }
 
-        $stream->expect(\Twig_Token::BLOCK_END_TYPE);
+        $stream->expect(Token::BLOCK_END_TYPE);
         $nodes['body'] = $this->parser->subparse([$this, 'decideMinifyEnd'], true);
-        $stream->expect(\Twig_Token::BLOCK_END_TYPE);
+        $stream->expect(Token::BLOCK_END_TYPE);
 
         return new MinifyNode($nodes, $attributes, $lineNo, $this->getTag());
     }
@@ -66,17 +69,17 @@ class MinifyTokenParser extends \Twig_TokenParser
     /**
      * @return string
      */
-    public function getTag()
+    public function getTag(): string
     {
         return 'minify';
     }
 
     /**
-     * @param \Twig_Token $token
+     * @param Token $token
      *
      * @return bool
      */
-    public function decideMinifyEnd(\Twig_Token $token)
+    public function decideMinifyEnd(Token $token): bool
     {
         return $token->test('endminify');
     }

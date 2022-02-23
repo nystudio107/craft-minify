@@ -9,7 +9,7 @@
 
 namespace nystudio107\minify\twigextensions;
 
-use nystudio107\minify\twigextensions\MinifyTokenParser;
+use Twig\Extension\AbstractExtension;
 
 /**
  * Minify twig extension
@@ -18,7 +18,7 @@ use nystudio107\minify\twigextensions\MinifyTokenParser;
  * @package   Minify
  * @since     1.2.0
  */
-class MinifyTwigExtension extends \Twig_Extension
+class MinifyTwigExtension extends AbstractExtension
 {
     // Public Methods
     // =========================================================================
@@ -28,7 +28,7 @@ class MinifyTwigExtension extends \Twig_Extension
      *
      * @return string The extension name
      */
-    public function getName()
+    public function getName(): string
     {
         return 'minify';
     }
@@ -39,7 +39,7 @@ class MinifyTwigExtension extends \Twig_Extension
      * @return array An array of Twig_TokenParserInterface or
      * Twig_TokenParserBrokerInterface instances
      */
-    public function getTokenParsers()
+    public function getTokenParsers(): array
     {
         return [
             new MinifyTokenParser(),

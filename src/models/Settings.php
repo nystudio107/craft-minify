@@ -9,9 +9,6 @@
 
 namespace nystudio107\minify\models;
 
-use nystudio107\minify\Minify;
-
-use Craft;
 use craft\base\Model;
 
 /**
@@ -31,14 +28,14 @@ class Settings extends Model
      *
      * @var bool
      */
-    public $disableTemplateMinifying = false;
+    public bool $disableTemplateMinifying = false;
 
     /**
      * If set to `true` then Minify will not minify anything if `devMode` is enabled
      *
      * @var bool
      */
-    public $disableDevModeMinifying = true;
+    public bool $disableDevModeMinifying = true;
 
 
     // Public Methods
@@ -47,7 +44,7 @@ class Settings extends Model
     /**
      * @inheritdoc
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             ['disableTemplateMinifying', 'boolean'],

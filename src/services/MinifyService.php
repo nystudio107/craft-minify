@@ -9,11 +9,12 @@
 
 namespace nystudio107\minify\services;
 
-use nystudio107\minify\Minify;
-use nystudio107\minify\models\Settings;
-
 use Craft;
 use craft\base\Component;
+use JSMin\JSMin;
+use Minify_CSSmin;
+use Minify_HTML;
+use nystudio107\minify\Minify;
 
 /**
  * Minify service
@@ -25,12 +26,12 @@ use craft\base\Component;
 class MinifyService extends Component
 {
 
-    private $shouldMinify = true;
+    private bool $shouldMinify = true;
 
     /**
      * @inheritdoc
      */
-    public function init()
+    public function init(): void
     {
         if (Minify::$plugin->getSettings()->disableTemplateMinifying) {
             $this->shouldMinify = false;
@@ -49,14 +50,14 @@ class MinifyService extends Component
      *
      * @return string
      */
-    public function minify($htmlText = "")
+    public function minify(string $htmlText = ""): string
     {
         if ($this->shouldMinify) {
             $options = [
                 'cssMinifier' => '\Minify_CSSmin::minify',
                 'jsMinifier' => '\JSMin\JSMin::minify',
             ];
-            $htmlText = \Minify_HTML::minify($htmlText, $options);
+            $htmlText = Minify_HTML::minify($htmlText, $options);
         }
 
         return $htmlText;
@@ -69,10 +70,10 @@ class MinifyService extends Component
      *
      * @return string
      */
-    public function htmlMin($htmlText = "")
+    public function htmlMin(string $htmlText = ""): string
     {
         if ($this->shouldMinify) {
-            $htmlText = \Minify_HTML::minify($htmlText);
+            $htmlText = Minify_HTML::minify($htmlText);
         }
 
         return $htmlText;
@@ -85,10 +86,10 @@ class MinifyService extends Component
      *
      * @return string
      */
-    public function cssMin($cssText = "")
+    public function cssMin(string $cssText = ""): string
     {
         if ($this->shouldMinify) {
-            $cssText = \Minify_CSSmin::minify($cssText);
+            $cssText = Minify_CSSmin::minify($cssText);
         }
 
         return $cssText;
@@ -101,10 +102,10 @@ class MinifyService extends Component
      *
      * @return string
      */
-    public function jsMin($jsText = "")
+    public function jsMin(string $jsText = ""): string
     {
         if ($this->shouldMinify) {
-            $jsText = \JSMin\JSMin::minify($jsText);
+            $jsText = JSMin::minify($jsText);
         }
 
         return $jsText;

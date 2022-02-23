@@ -9,12 +9,12 @@
 
 namespace nystudio107\minify;
 
+use Craft;
+use craft\base\Model;
+use craft\base\Plugin;
+use nystudio107\minify\models\Settings;
 use nystudio107\minify\services\MinifyService;
 use nystudio107\minify\twigextensions\MinifyTwigExtension;
-use nystudio107\minify\models\Settings;
-
-use Craft;
-use craft\base\Plugin;
 
 /**
  * Class Minify
@@ -23,20 +23,50 @@ use craft\base\Plugin;
  * @package   Minify
  * @since     1.2.0
  *
- * @property  MinifyService    minify
+ * @property  MinifyService minify
  */
 class Minify extends Plugin
 {
 
+    // Static Properties
+    // =========================================================================
     /**
      * @var Minify
      */
-    public static $plugin;
+    public static Minify $plugin;
+
+    /**
+     * @var string
+     */
+    public string $schemaVersion = '1.0.0';
+
+    // Public Properties
+    // =========================================================================
+    /**
+     * @var bool
+     */
+    public bool $hasCpSettings = false;
+    /**
+     * @var bool
+     */
+    public bool $hasCpSection = false;
 
     /**
      * @inheritdoc
      */
-    public function init()
+    public function __construct($id, $parent = null, array $config = [])
+    {
+        $config['components'] = [
+            'minify' => MinifyService::class,
+        ];
+
+        parent::__construct($id, $parent, $config);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function init(): void
     {
         parent::init();
         self::$plugin = $this;
@@ -59,9 +89,9 @@ class Minify extends Plugin
      * Returns the user-facing name of the plugin, which can override the name
      * in composer.json
      *
-     * @return mixed
+     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return Craft::t('minify', 'Minify');
     }
@@ -70,11 +100,10 @@ class Minify extends Plugin
     // =========================================================================
 
     /**
-     * @return Settings
+     * @inerhitDoc
      */
-    protected function createSettingsModel()
+    protected function createSettingsModel(): ?Model
     {
         return new Settings();
     }
-
 }
