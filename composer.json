@@ -1,51 +1,51 @@
 {
-    "name": "nystudio107/craft-minify",
-    "description": "A simple plugin that allows you to minify blocks of HTML, CSS, and JS inline in Craft CMS templates.",
-    "type": "craft-plugin",
-    "version": "1.2.10",
-    "keywords": [
-        "craft",
-        "cms",
-        "craftcms",
-        "craft-plugin",
-        "minify"
-    ],
-    "support": {
-        "docs": "https://nystudio107.com/plugins/minify/documentation",
-        "issues": "https://nystudio107.com/plugins/minify/support"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-          "name": "nystudio107",
-          "homepage": "https://nystudio107.com/"
-        }
-    ],
-    "require": {
-        "craftcms/cms": "^3.0.0",
-        "mrclay/minify": "^3.0.10"
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-          "nystudio107\\minify\\": "src/"
-        }
-    },
-    "extra": {
-        "name": "Minify",
-        "handle": "minify",
-        "schemaVersion": "1.0.0",
-        "hasCpSettings": false,
-        "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-minify/v1/CHANGELOG.md",
-        "class": "nystudio107\\minify\\Minify",
-        "components": {
-            "minify": "nystudio107\\minify\\services\\MinifyService"
-        }
+  "name": "nystudio107/craft-minify",
+  "description": "A simple plugin that allows you to minify blocks of HTML, CSS, and JS inline in Craft CMS templates.",
+  "type": "craft-plugin",
+  "version": "1.2.11",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "craft-plugin",
+    "minify"
+  ],
+  "support": {
+    "docs": "https://nystudio107.com/plugins/minify/documentation",
+    "issues": "https://nystudio107.com/plugins/minify/support"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "nystudio107",
+      "homepage": "https://nystudio107.com/"
     }
+  ],
+  "require": {
+    "craftcms/cms": "^3.0.0",
+    "mrclay/minify": "^3.0.10"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "nystudio107\\minify\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Minify",
+    "handle": "minify",
+    "schemaVersion": "1.0.0",
+    "hasCpSettings": false,
+    "hasCpSection": false,
+    "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-minify/v1/CHANGELOG.md",
+    "class": "nystudio107\\minify\\Minify",
+    "components": {
+      "minify": "nystudio107\\minify\\services\\MinifyService"
+    }
+  }
 }

@@ -1,5 +1,16 @@
 # Minify Changelog
 
+## 1.2.11 - 2022.02.22
+### Added
+
+* Add `.gitattributes` & `CODEOWNERS`
+
+### Changed
+
+* Switched documentation system to VitePress
+* Use Textlint for the documentation
+* Build documentation automatically via GitHub action
+
 ## 1.2.10 - 2020.04.02
 ### Changed
 * Exclude Nginx/Apache Server Side Include (SSI) comments from being stripped via `mrclay/minify` PR
