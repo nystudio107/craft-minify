@@ -1,6 +1,6 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nystudio107/craft-minify/badges/quality-score.png?b=v1)](https://scrutinizer-ci.com/g/nystudio107/craft-minify/?branch=v1) [![Code Coverage](https://scrutinizer-ci.com/g/nystudio107/craft-minify/badges/coverage.png?b=v1)](https://scrutinizer-ci.com/g/nystudio107/craft-minify/?branch=v1) [![Build Status](https://scrutinizer-ci.com/g/nystudio107/craft-minify/badges/build.png?b=v1)](https://scrutinizer-ci.com/g/nystudio107/craft-minify/build-status/v1) [![Code Intelligence Status](https://scrutinizer-ci.com/g/nystudio107/craft-minify/badges/code-intelligence.svg?b=v1)](https://scrutinizer-ci.com/code-intelligence)
 
-# Minify plugin for Craft CMS 3.x
+# Minify plugin for Craft CMS 4.x
 
 A simple plugin that allows you to minify blocks of HTML, CSS, and JS inline in Craft CMS templates
 
@@ -10,7 +10,7 @@ Related: [Minify for Craft 2.x](https://github.com/nystudio107/minify)
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0 or later.
+This plugin requires Craft CMS 4.0.0 or later.
 
 ## Installation
 
