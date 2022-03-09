@@ -35,13 +35,14 @@ class Minify extends Plugin
      */
     public static Minify $plugin;
 
+    // Public Properties
+    // =========================================================================
+
     /**
      * @var string
      */
     public string $schemaVersion = '1.0.0';
 
-    // Public Properties
-    // =========================================================================
     /**
      * @var bool
      */
@@ -50,6 +51,9 @@ class Minify extends Plugin
      * @var bool
      */
     public bool $hasCpSection = false;
+
+    // Public Methods
+    // =========================================================================
 
     /**
      * @inheritdoc
