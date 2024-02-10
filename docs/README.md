@@ -1,6 +1,6 @@
-# `vite` docs
+# `minify` docs
 
-This buildchain is a self-contained build system for the `vite` documentation.
+This buildchain is a self-contained build system for the `minify` documentation.
 
 ## Overview
 
