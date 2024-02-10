@@ -9,12 +9,11 @@
 
 namespace nystudio107\minify;
 
-use nystudio107\minify\services\MinifyService;
-use nystudio107\minify\twigextensions\MinifyTwigExtension;
-use nystudio107\minify\models\Settings;
-
 use Craft;
 use craft\base\Plugin;
+use nystudio107\minify\models\Settings;
+use nystudio107\minify\services\MinifyService;
+use nystudio107\minify\twigextensions\MinifyTwigExtension;
 
 /**
  * Class Minify
@@ -23,11 +22,11 @@ use craft\base\Plugin;
  * @package   Minify
  * @since     1.2.0
  *
- * @property  MinifyService    minify
+ * @property  MinifyService $minify
+ * @method Settings getSettings()
  */
 class Minify extends Plugin
 {
-
     /**
      * @var Minify
      */
@@ -76,5 +75,4 @@ class Minify extends Plugin
     {
         return new Settings();
     }
-
 }

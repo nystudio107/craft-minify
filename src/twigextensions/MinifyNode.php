@@ -10,6 +10,8 @@
 namespace nystudio107\minify\twigextensions;
 
 use nystudio107\minify\Minify;
+use Twig\Compiler;
+use Twig\Node\Node;
 
 /**
  * Minify twig node parser
@@ -18,16 +20,16 @@ use nystudio107\minify\Minify;
  * @package   Minify
  * @since     1.2.0
  */
-class MinifyNode extends \Twig_Node
+class MinifyNode extends Node
 {
-
     // Public Methods
     // =========================================================================
 
     /**
-     * @param \Twig_Compiler $compiler
+     * @param Compiler $compiler
+     * @return void
      */
-    public function compile(\Twig_Compiler $compiler)
+    public function compile(Compiler $compiler): void
     {
         $html = $this->getAttribute('html');
         $css = $this->getAttribute('css');
@@ -43,16 +45,16 @@ class MinifyNode extends \Twig_Node
 
         if ($html) {
             $compiler
-                ->write("echo ".Minify::class."::\$plugin->minify->htmlMin(\$_compiledBody);\n");
+                ->write("echo " . Minify::class . "::\$plugin->minify->htmlMin(\$_compiledBody);\n");
         } elseif ($css) {
             $compiler
-                ->write("echo ".Minify::class."::\$plugin->minify->cssMin(\$_compiledBody);\n");
+                ->write("echo " . Minify::class . "::\$plugin->minify->cssMin(\$_compiledBody);\n");
         } elseif ($js) {
             $compiler
-                ->write("echo ".Minify::class."::\$plugin->minify->jsMin(\$_compiledBody);\n");
+                ->write("echo " . Minify::class . "::\$plugin->minify->jsMin(\$_compiledBody);\n");
         } else {
             $compiler
-                ->write("echo ".Minify::class."::\$plugin->minify->minify(\$_compiledBody);\n");
+                ->write("echo " . Minify::class . "::\$plugin->minify->minify(\$_compiledBody);\n");
         }
     }
 }

@@ -9,11 +9,10 @@
 
 namespace nystudio107\minify\services;
 
-use nystudio107\minify\Minify;
-use nystudio107\minify\models\Settings;
-
 use Craft;
+
 use craft\base\Component;
+use nystudio107\minify\Minify;
 
 /**
  * Minify service
@@ -24,7 +23,6 @@ use craft\base\Component;
  */
 class MinifyService extends Component
 {
-
     private $shouldMinify = true;
 
     /**

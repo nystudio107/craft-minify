@@ -1,5 +1,15 @@
 # Minify Changelog
 
+## 1.2.12 - 2024.02.09
+### Added
+* Add `phpstan` and `ecs` code linting
+* Add `code-analysis.yaml` GitHub action
+
+### Changed
+* Updated docs to use node 20 & a new sitemap plugin
+* PHPstan code cleanup
+* ECS code cleanup
+
 ## 1.2.11 - 2022.02.22
 ### Added
 
