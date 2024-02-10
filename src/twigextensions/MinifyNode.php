@@ -22,7 +22,6 @@ use Twig\Node\Node;
  */
 class MinifyNode extends Node
 {
-
     // Public Methods
     // =========================================================================
 

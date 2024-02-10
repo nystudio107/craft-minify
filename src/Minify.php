@@ -27,7 +27,6 @@ use nystudio107\minify\twigextensions\MinifyTwigExtension;
  */
 class Minify extends Plugin
 {
-
     // Static Properties
     // =========================================================================
     /**
