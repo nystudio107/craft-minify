@@ -25,7 +25,6 @@ use nystudio107\minify\Minify;
  */
 class MinifyService extends Component
 {
-
     private bool $shouldMinify = true;
 
     /**

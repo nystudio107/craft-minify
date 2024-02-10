@@ -2,7 +2,7 @@
   "name": "nystudio107/craft-minify",
   "description": "A simple plugin that allows you to minify blocks of HTML, CSS, and JS inline in Craft CMS templates.",
   "type": "craft-plugin",
-  "version": "4.0.0-beta.2",
+  "version": "4.0.0",
   "keywords": [
     "craft",
     "cms",
@@ -23,8 +23,26 @@
     }
   ],
   "require": {
-    "craftcms/cms": "^4.0.0-alpha",
+    "craftcms/cms": "^4.0.0",
     "mrclay/minify": "^3.0.10"
+  },
+  "require-dev": {
+    "craftcms/ecs": "dev-main",
+    "craftcms/phpstan": "dev-main",
+    "craftcms/rector": "dev-main"
+  },
+  "scripts": {
+    "phpstan": "phpstan --ansi --memory-limit=1G",
+    "check-cs": "ecs check --ansi",
+    "fix-cs": "ecs check --fix --ansi"
+  },
+  "config": {
+    "allow-plugins": {
+      "craftcms/plugin-installer": true,
+      "yiisoft/yii2-composer": true
+    },
+    "optimize-autoloader": true,
+    "sort-packages": true
   },
   "autoload": {
     "psr-4": {
