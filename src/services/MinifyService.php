@@ -3,15 +3,17 @@
  * Minify plugin for Craft CMS 3.x
  *
  * @link      https://nystudio107.com/
- * @copyright Copyright (c) 2017 nystudio107
+ * @copyright Copyright (c) nystudio107
  * @license   MIT License https://opensource.org/licenses/MIT
  */
 
 namespace nystudio107\minify\services;
 
 use Craft;
-
 use craft\base\Component;
+use JSMin\JSMin;
+use Minify_CSSmin;
+use Minify_HTML;
 use nystudio107\minify\Minify;
 
 /**
@@ -54,7 +56,7 @@ class MinifyService extends Component
                 'cssMinifier' => '\Minify_CSSmin::minify',
                 'jsMinifier' => '\JSMin\JSMin::minify',
             ];
-            $htmlText = \Minify_HTML::minify($htmlText, $options);
+            $htmlText = Minify_HTML::minify($htmlText, $options);
         }
 
         return $htmlText;
@@ -70,7 +72,7 @@ class MinifyService extends Component
     public function htmlMin($htmlText = "")
     {
         if ($this->shouldMinify) {
-            $htmlText = \Minify_HTML::minify($htmlText);
+            $htmlText = Minify_HTML::minify($htmlText);
         }
 
         return $htmlText;
@@ -86,7 +88,7 @@ class MinifyService extends Component
     public function cssMin($cssText = "")
     {
         if ($this->shouldMinify) {
-            $cssText = \Minify_CSSmin::minify($cssText);
+            $cssText = Minify_CSSmin::minify($cssText);
         }
 
         return $cssText;
@@ -102,7 +104,7 @@ class MinifyService extends Component
     public function jsMin($jsText = "")
     {
         if ($this->shouldMinify) {
-            $jsText = \JSMin\JSMin::minify($jsText);
+            $jsText = JSMin::minify($jsText);
         }
 
         return $jsText;
