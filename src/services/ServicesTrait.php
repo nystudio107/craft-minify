@@ -43,7 +43,7 @@ trait ServicesTrait
     /**
      * Returns the helper service
      *
-     * @return MinifyService The helper service
+     * @return MinifyService The minify service
      * @throws InvalidConfigException
      */
     public function getMinify(): MinifyService
