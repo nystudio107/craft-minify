@@ -23,7 +23,8 @@ use nystudio107\minify\twigextensions\MinifyTwigExtension;
  * @package   Minify
  * @since     1.2.0
  *
- * @property  MinifyService minify
+ * @property  MinifyService $minify
+ * @method Settings getSettings()
  */
 class Minify extends Plugin
 {
