@@ -9,8 +9,6 @@
 
 namespace nystudio107\minify\twigextensions;
 
-use nystudio107\minify\twigextensions\MinifyTokenParser;
-
 /**
  * Minify twig extension
  *

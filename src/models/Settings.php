@@ -9,10 +9,9 @@
 
 namespace nystudio107\minify\models;
 
-use nystudio107\minify\Minify;
-
-use Craft;
 use craft\base\Model;
+
+use nystudio107\minify\Minify;
 
 /**
  * Minify Settings model
