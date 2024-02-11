@@ -1,6 +1,6 @@
 # Minify Changelog
 
-## 1.2.13 - UNRELEASED
+## 1.2.13 - 2024.02.10
 ### Added
 * Added `ServicesTrait` for the plugin service component registration
 
