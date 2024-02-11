@@ -1,6 +1,6 @@
 # Minify Changelog
 
-## 5.0.0-beta.2 - UNRELEASED
+## 5.0.0-beta.2 - 2024.02.10
 ### Added
 * Added `ServicesTrait` for the plugin service component registration
 
