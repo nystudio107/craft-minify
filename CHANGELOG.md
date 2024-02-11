@@ -1,5 +1,9 @@
 # Minify Changelog
 
+## 4.0.1 - 2024.02.10
+### Added
+* Added `ServicesTrait` for the plugin service component registration
+
 ## 4.0.0 - 2024.02.09
 ### Added
 * Add `phpstan` and `ecs` code linting
