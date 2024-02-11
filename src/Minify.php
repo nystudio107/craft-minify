@@ -3,7 +3,7 @@
  * Minify plugin for Craft CMS 3.x
  *
  * @link      https://nystudio107.com/
- * @copyright Copyright (c) 2017 nystudio107
+ * @copyright Copyright (c) nystudio107
  * @license   MIT License https://opensource.org/licenses/MIT
  */
 
@@ -12,7 +12,7 @@ namespace nystudio107\minify;
 use Craft;
 use craft\base\Plugin;
 use nystudio107\minify\models\Settings;
-use nystudio107\minify\services\MinifyService;
+use nystudio107\minify\services\ServicesTrait;
 use nystudio107\minify\twigextensions\MinifyTwigExtension;
 
 /**
@@ -22,11 +22,15 @@ use nystudio107\minify\twigextensions\MinifyTwigExtension;
  * @package   Minify
  * @since     1.2.0
  *
- * @property  MinifyService $minify
  * @method Settings getSettings()
  */
 class Minify extends Plugin
 {
+    // Traits
+    // =========================================================================
+
+    use ServicesTrait;
+
     /**
      * @var Minify
      */
