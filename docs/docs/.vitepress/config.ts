@@ -24,7 +24,10 @@ export default defineConfig({
     algolia: {
       appId: 'AGVNH9S5ER',
       apiKey: 'd7ca5cf1e63a029620f5006e70f54cae',
-      indexName: 'nystudio107-minify'
+      indexName: 'nystudio107-minify',
+      searchParameters: {
+        facetFilters: ["version:v5"],
+      },
     },
     lastUpdatedText: 'Last Updated',
     sidebar: [],
