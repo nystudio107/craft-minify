@@ -141,7 +141,7 @@ Minify offers a `config.php` to allow you to control its behavior:
 
 `disableTemplateMinifying` if set to `true` then Minify will not minify anything
 
-`disableDevModeMinifying` if set to `true` then Minify will not minify anything if `devMode` is enabled
+`disableDevModeMinifying` if set to `true` (the default) then Minify will not minify anything if `devMode` is enabled
 
 Don't change this file directly, instead duplicate it, rename it to `minify.php` and copy it into your `craft/config` folder.
 
